@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
 // can directly call database or external API here
-// for this example we just gonna console log the request body and return a success response
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   try {
