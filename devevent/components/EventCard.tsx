@@ -10,7 +10,7 @@ interface props {
 
 const EventCard = ({title, description, slug}:props) => {
   return (
-    <Link  href={`/events/${slug}`} id="event-card" className="m-5">
+    <Link  href={`/Events/${slug}`} id="event-card" className="m-5">
       <h2>{title}</h2>
       <p>{description}</p>
     </Link>

@@ -3,11 +3,15 @@ import { NextRequest, NextResponse } from "next/server"
 // can directly call database or external API here
 // for this example we just gonna console log the request body and return a success response
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   try {
-    const data = await req.json()
-    console.log(data)
-    return NextResponse.json({ message: "event created successfully" })
+    const events = [
+      { title: "event 1", description: "this is event 1 description", slug: "event-1" },
+      { title: "event 2", description: "this is event 2 description", slug: "event-2" },
+    ];
+
+    return NextResponse.json({ events }, { status: 200 })
+
   } catch (e) { 
     console.error(e)
     return NextResponse.json({ message: "event creation failed", error: e instanceof Error ? e.message : 'Unknown error' })
